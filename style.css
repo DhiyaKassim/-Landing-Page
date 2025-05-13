@@ -8,6 +8,15 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
 }
+/* Animated star background */
+#stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: black;
+}
+
 
 a {
     color: #0ff;
@@ -326,4 +335,26 @@ button[type="submit"]:hover {
     }
 }
 
+/* Back to Top Button */
+#topBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background-color: #0ff;
+    color: black;
+    cursor: pointer;
+    padding: 14px 16px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 0 12px #0ff;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+#topBtn:hover {
+    background-color: #00e6e6;
+}
 
