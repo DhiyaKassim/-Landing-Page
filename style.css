@@ -110,27 +110,195 @@ footer {
     text-align: center;
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
+/* Base Styles – Mobile First */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero {
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    position: relative;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #182848;
+    text-align: center;
+}
+
+#nav-menu.show {
+    display: flex;
+}
+
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-top: 1px solid #333;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+.cta-button {
+    background: #fff;
+    color: #333;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ddd;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background: #f4f4f4;
+    padding: 12px;
+    margin: 10px 0;
+    border-left: 5px solid #4b6cb7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #4b6cb7;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a5199;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 600px) {
+    #nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        display: flex;
+        background: none;
     }
 
-    #nav-menu {
+    .menu-icon {
         display: none;
-        flex-direction: column;
-        background: #182848;
-        padding: 10px 0;
     }
 
     #nav-menu a {
-        padding: 10px;
-        border-top: 1px solid #555;
+        border: none;
+        padding: 0;
+        color: #fff;
+    }
+
+    form {
+        max-width: 500px;
+        margin: auto;
+    }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 120px 40px;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    #about, #contact {
+        grid-column: span 2;
+    }
+
+    ul li {
+        font-size: 1.1rem;
+    }
+
+    form {
+        grid-column: span 2;
     }
 }
 
 /* Animation */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+
+
