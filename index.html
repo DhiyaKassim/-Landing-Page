@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="preloader">
+    <div class="loader"></div>
+</div>
 
 <!-- Hero Section (Futuristic Enhanced) -->
 <section class="hero">
@@ -19,8 +22,8 @@
         <a href="#contact">Contact</a>
     </nav>
     <h1 class="glow-title">Dhiya Kassim</h1>
-    <p class="tagline">Web Developer & AI Explorer</p>
-    <a href="#contact" class="cta-button">Get In Touch</a>
+  <p class="tagline"><span id="typed-text"></span><span class="cursor">|</span></p>
+  <a href="#contact" class="cta-button">Get In Touch</a>
 </section>
 
 <!-- About Section -->
@@ -124,6 +127,40 @@
 </script>
 
 <button id="topBtn" title="Go to top">⬆</button>
+<script>
+    const textArray = ["Web Developer", "AI Explorer", "Tech Enthusiast", "Creative Coder"];
+    let index = 0;
+    let charIndex = 0;
+    const typedText = document.getElementById("typed-text");
+
+    function type() {
+        if (charIndex < textArray[index].length) {
+            typedText.textContent += textArray[index].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 100);
+        } else {
+            setTimeout(erase, 2000);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            typedText.textContent = textArray[index].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 50);
+        } else {
+            index = (index + 1) % textArray.length;
+            setTimeout(type, 500);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+</script>
+<script>
+    window.addEventListener("load", function() {
+        document.getElementById("preloader").style.display = "none";
+    });
+</script>
 
 </body>
 </html>
